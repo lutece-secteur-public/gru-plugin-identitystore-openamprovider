@@ -42,16 +42,16 @@
             <type>jar</type>
         </dependency>
       </dependencies>
-    <scm>
-        <connection>scm:svn:http://dev.lutece.paris.fr/svn/lutece/applications/openam/plugin-identity-provider/trunk</connection>
-        <developerConnection>scm:svn:https://dev.lutece.paris.fr/svn/lutece/applications/openam/plugin-identity-provider/trunk</developerConnection>
-        <url>http://dev.lutece.paris.fr/svn/lutece/applications/openam/plugin-identity-provider/trunk</url>
-    </scm>
-
    <properties>
-		<componentName>identity-provider</componentName>
-		<jiraProjectName>PIP</jiraProjectName>
-		<jiraComponentId>12868</jiraComponentId>
-	</properties>
+        <jiraProjectName>PIOP</jiraProjectName>
+        <jiraComponentId>13664</jiraComponentId>
+    </properties>
+
+    <scm>
+        <connection>scm:git:https://github.com/lutece-secteur-public/gru-plugin-identitystore-openamprovider.git</connection>
+        <developerConnection>scm:git:https://github.com/lutece-secteur-public/gru-plugin-identitystore-openamprovider.git</developerConnection>
+        <url>https://github.com/lutece-secteur-public/gru-plugin-identitystore-openamprovider.git</url>
+        <tag>HEAD</tag>
+   </scm>
 
 </project>
