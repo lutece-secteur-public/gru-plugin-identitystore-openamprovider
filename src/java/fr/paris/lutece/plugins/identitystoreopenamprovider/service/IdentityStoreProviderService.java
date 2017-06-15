@@ -71,7 +71,8 @@ public class IdentityStoreProviderService implements IIdentityProviderService
 
             if ( identityDto != null )
             {
-                UserInformations.put( LUTECE_USER_ATTRIBUTE_IDENTITYSTORE_PREFIX + LUTECE_USER_ATTRIBUTE_IDENTITYSTORE_CUSTOMER_ID, identityDto.getCustomerId( ) );
+                UserInformations
+                        .put( LUTECE_USER_ATTRIBUTE_IDENTITYSTORE_PREFIX + LUTECE_USER_ATTRIBUTE_IDENTITYSTORE_CUSTOMER_ID, identityDto.getCustomerId( ) );
 
                 if ( identityDto.getAttributes( ) != null )
                 {
@@ -86,7 +87,7 @@ public class IdentityStoreProviderService implements IIdentityProviderService
         }
         catch( IdentityNotFoundException infe )
         {
-            AppLogService.error( "Error in IdentityStoreProviderService during loading identity for guid " + strName,infe );
+            AppLogService.error( "Error in IdentityStoreProviderService during loading identity for guid " + strName, infe );
         }
 
         return UserInformations;
