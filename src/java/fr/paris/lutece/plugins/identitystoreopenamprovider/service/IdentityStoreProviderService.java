@@ -57,6 +57,7 @@ public class IdentityStoreProviderService implements IIdentityProviderService
     private static final String CLIENT_APP_CODE = AppPropertiesService.getProperty( PROPERTY_IDENTITY_STORE_APPLICATION_CODE );
     private static final String BEAN_IDENTITY_SERVICE = "identitystoreopenamprovider.identitystore.identityService";
     private static final String LUTECE_USER_ATTRIBUTE_IDENTITYSTORE_PREFIX = "ids.";
+    private static final String LUTECE_USER_ATTRIBUTE_IDENTITYSTORE_CUSTOMER_ID = "customer_id";
 
     @Override
     public Map<String, String> getIdentityInformations( String strName )
@@ -68,12 +69,17 @@ public class IdentityStoreProviderService implements IIdentityProviderService
         {
             IdentityDto identityDto = identityStoreService.getIdentityByConnectionId( strName, CLIENT_APP_CODE );
 
-            if ( identityDto != null && identityDto.getAttributes( ) != null )
+            if ( identityDto != null )
             {
-                for ( Map.Entry<String, AttributeDto> entry : identityDto.getAttributes( ).entrySet( ) )
-                {
-                    UserInformations.put( LUTECE_USER_ATTRIBUTE_IDENTITYSTORE_PREFIX + entry.getKey( ), entry.getValue( ).getValue( ) );
+                UserInformations.put( LUTECE_USER_ATTRIBUTE_IDENTITYSTORE_PREFIX + LUTECE_USER_ATTRIBUTE_IDENTITYSTORE_CUSTOMER_ID, identityDto.getCustomerId( ) );
 
+                if ( identityDto.getAttributes( ) != null )
+                {
+                    for ( Map.Entry<String, AttributeDto> entry : identityDto.getAttributes( ).entrySet( ) )
+                    {
+                        UserInformations.put( LUTECE_USER_ATTRIBUTE_IDENTITYSTORE_PREFIX + entry.getKey( ), entry.getValue( ).getValue( ) );
+
+                    }
                 }
             }
 
