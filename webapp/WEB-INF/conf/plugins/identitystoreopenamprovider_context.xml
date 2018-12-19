@@ -7,7 +7,7 @@
   	<bean id="identitystoreopenamprovider.identityProviderService" class="fr.paris.lutece.plugins.identitystoreopenamprovider.service.IdentityStoreProviderService" />
   
     <!-- IDENTITYSTORE BEAN -->
-    <bean id="identitystoreopenamprovider.identitystore.apiManagerTransport" class="fr.paris.lutece.plugins.identitystore.web.rs.service.IdentityTransportApiManagerRest">
+    <bean id="identitystoreopenamprovider.identitystore.apiManagerTransport" class="fr.paris.lutece.plugins.identitystore.v2.web.rs.service.IdentityTransportApiManagerRest">
       <property name="identityStoreEndPoint">
         <value>https://g93-gru-identity-api.apps.paris.mdp/identity/v1</value>
       </property>
@@ -18,7 +18,7 @@
         <value>api_manager_code</value>
       </property>
     </bean>
-    <bean id="identitystoreopenamprovider.identitystore.identityService" class="fr.paris.lutece.plugins.identitystore.web.service.IdentityService">
+    <bean id="identitystoreopenamprovider.identitystore.identityService" class="fr.paris.lutece.plugins.identitystore.v2.web.service.IdentityService">
       <constructor-arg ref="identitystoreopenamprovider.identitystore.apiManagerTransport"/>
     </bean>
     
